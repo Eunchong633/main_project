@@ -24,6 +24,47 @@
 
 	<!-- Theme CSS -->
 	<link rel="stylesheet" href="./assets/css/theme.min.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+		.gowun-batang-regular {
+			font-family: "Gowun Batang", serif;
+			  font-weight: 400;
+			  font-style: normal;
+		}
+		 /* 이 부분에 CSS 코드 작성 */
+		 .card {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+			/* 카드가 고정된 가로 크기를 가지도록 설정 */
+		.card-product {
+			width: 100%;      /* 카드의 가로는 부모 요소에 맞게 설정 */
+			max-width: 300px; /* 가로 크기 제한 (300px 예시) */
+			height: auto;     /* 세로 크기는 콘텐츠에 맞게 자동 조정 */
+			margin-bottom: 20px; /* 카드 사이의 간격 */
+		}
+
+		/* 카드 내 이미지 크기에 맞게 세로 크기 조정 */
+		.card-body img {
+			width: 100%; /* 이미지를 카드의 전체 너비에 맞게 확장 */
+			height: auto; /* 이미지의 세로 비율에 맞게 자동 조정 */
+		}
+
+		/* 카드 내용이 세로로 정렬되도록 flexbox 사용 */
+		.card-body {
+			display: flex;
+			flex-direction: column;  /* 카드 내용이 세로로 정렬되게 */
+			justify-content: space-between; /* 내용이 균등하게 배치되도록 */
+		}
+		
+	</style>
+	
 </head>
 
 <body>
@@ -128,18 +169,18 @@
 				<div class="row w-100 align-items-center gx-lg-2 gx-0">
 					<div class="col-xxl-2 col-lg-3 col-md-6 col-5">
 						<a class="navbar-brand d-none d-lg-block" href="./index.html">
-							<img src="./assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template" />
+							<h1><strong>STANDARD</strong></h1>
 						</a>
 						<div class="d-flex justify-content-between w-100 d-lg-none">
 							<a class="navbar-brand" href="./index.html">
-								<img src="./assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template" />
+								<h1><strong>STANDARD</strong></h1>
 							</a>
 						</div>
 					</div>
 					<div class="col-xxl-5 col-lg-5 d-none d-lg-block">
 						<form action="#">
 							<div class="input-group">
-								<input class="form-control rounded" type="search" placeholder="Search for products" />
+								<input class="form-control rounded" type="search" placeholder="원하는 스타일 검색하기" />
 								<span class="input-group-append">
 									<button class="btn bg-white border border-start-0 ms-n10 rounded-0 rounded-end"
 										type="button">
@@ -160,7 +201,7 @@
 						<button type="button" class="btn btn-outline-gray-400 text-muted" data-bs-toggle="modal"
 							data-bs-target="#locationModal">
 							<i class="feather-icon icon-map-pin me-2"></i>
-							Location
+							지역설정
 						</button>
 					</div>
 					<div class="col-lg-2 col-xxl-2 text-end col-md-6 col-7">
@@ -227,354 +268,57 @@
 			</div>
 		</div>
 
-		<nav class="navbar navbar-expand-lg navbar-light navbar-default py-0 pb-lg-4"
-			aria-label="Offcanvas navbar large">
-			<div class="container">
-				<div class="offcanvas offcanvas-start" tabindex="-1" id="navbar-default"
-					aria-labelledby="navbar-defaultLabel">
-					<div class="offcanvas-header pb-1">
-						<a href="./index.html"><img src="./assets/images/logo/freshcart-logo.svg"
-								alt="eCommerce HTML Template" /></a>
-						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-					</div>
-					<div class="offcanvas-body">
-						<div class="d-block d-lg-none mb-4">
-							<form action="#">
-								<div class="input-group">
-									<input class="form-control rounded" type="search"
-										placeholder="Search for products" />
-									<span class="input-group-append">
-										<button class="btn bg-white border border-start-0 ms-n10 rounded-0 rounded-end"
-											type="button">
-											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-												viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-												stroke-linecap="round" stroke-linejoin="round"
-												class="feather feather-search">
-												<circle cx="11" cy="11" r="8"></circle>
-												<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-											</svg>
-										</button>
-									</span>
-								</div>
-							</form>
-							<div class="mt-2">
-								<button type="button" class="btn btn-outline-gray-400 text-muted w-100"
-									data-bs-toggle="modal" data-bs-target="#locationModal">
-									<i class="feather-icon icon-map-pin me-2"></i>
-									Pick Location
-								</button>
-							</div>
-						</div>
-						<div class="d-block d-lg-none mb-4">
-							<a class="btn btn-primary w-100 d-flex justify-content-center align-items-center"
-								data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-								aria-controls="collapseExample">
-								<span class="me-2">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-										stroke-linejoin="round" class="feather feather-grid">
-										<rect x="3" y="3" width="7" height="7"></rect>
-										<rect x="14" y="3" width="7" height="7"></rect>
-										<rect x="14" y="14" width="7" height="7"></rect>
-										<rect x="3" y="14" width="7" height="7"></rect>
-									</svg>
-								</span>
-								All Departments
-							</a>
-							<div class="collapse mt-2" id="collapseExample">
-								<div class="card card-body">
-									<ul class="mb-0 list-unstyled">
-										<li><a class="dropdown-item" href="./pages/shop-grid.html">Dairy, Bread &
-												Eggs</a></li>
-										<li><a class="dropdown-item" href="./pages/shop-grid.html">Snacks & Munchies</a>
-										</li>
-										<li><a class="dropdown-item" href="./pages/shop-grid.html">Fruits &
-												Vegetables</a></li>
-										<li><a class="dropdown-item" href="./pages/shop-grid.html">Cold Drinks &
-												Juices</a></li>
-										<li><a class="dropdown-item" href="./pages/shop-grid.html">Breakfast & Instant
-												Food</a></li>
-										<li><a class="dropdown-item" href="./pages/shop-grid.html">Bakery & Biscuits</a>
-										</li>
-										<li><a class="dropdown-item" href="./pages/shop-grid.html">Chicken, Meat &
-												Fish</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="dropdown me-3 d-none d-lg-block">
-							<button class="btn btn-primary px-6" type="button" id="dropdownMenuButton1"
-								data-bs-toggle="dropdown" aria-expanded="false">
-								<span class="me-1">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-										stroke-linejoin="round" class="feather feather-grid">
-										<rect x="3" y="3" width="7" height="7"></rect>
-										<rect x="14" y="3" width="7" height="7"></rect>
-										<rect x="14" y="14" width="7" height="7"></rect>
-										<rect x="3" y="14" width="7" height="7"></rect>
-									</svg>
-								</span>
-								All Departments
-							</button>
-							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-								<li><a class="dropdown-item" href="./pages/shop-grid.html">Dairy, Bread & Eggs</a></li>
-								<li><a class="dropdown-item" href="./pages/shop-grid.html">Snacks & Munchies</a></li>
-								<li><a class="dropdown-item" href="./pages/shop-grid.html">Fruits & Vegetables</a></li>
-								<li><a class="dropdown-item" href="./pages/shop-grid.html">Cold Drinks & Juices</a></li>
-								<li><a class="dropdown-item" href="./pages/shop-grid.html">Breakfast & Instant Food</a>
-								</li>
-								<li><a class="dropdown-item" href="./pages/shop-grid.html">Bakery & Biscuits</a></li>
-								<li><a class="dropdown-item" href="./pages/shop-grid.html">Chicken, Meat & Fish</a></li>
-							</ul>
-						</div>
-						<div>
-							<ul class="navbar-nav align-items-center">
-								<li class="nav-item dropdown w-100 w-lg-auto">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-										aria-expanded="false">Home</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="./index.html">Home 1</a></li>
-										<li><a class="dropdown-item" href="./pages/index-2.html">Home 2</a></li>
-										<li><a class="dropdown-item" href="./pages/index-3.html">Home 3</a></li>
-										<li><a class="dropdown-item" href="./pages/index-4.html">Home 4</a></li>
-										<li>
-											<a class="dropdown-item" href="./pages/index-5.html">Home 5</a>
-										</li>
-									</ul>
-								</li>
-								<li class="nav-item dropdown w-100 w-lg-auto">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-										aria-expanded="false">Shop</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="./pages/shop-grid.html">Shop Grid -
-												Filter</a></li>
-										<li><a class="dropdown-item" href="./pages/shop-grid-3-column.html">Shop Grid -
-												3 column</a>
-										</li>
-										<li><a class="dropdown-item" href="./pages/shop-list.html">Shop List -
-												Filter</a></li>
-										<li><a class="dropdown-item" href="./pages/shop-filter.html">Shop - Filter</a>
-										</li>
-										<li><a class="dropdown-item" href="./pages/shop-fullwidth.html">Shop Wide</a>
-										</li>
-										<li><a class="dropdown-item" href="./pages/shop-single.html">Shop Single</a>
-										</li>
-										<li><a class="dropdown-item" href="./pages/shop-single-2.html">Shop Single
-												v2</a></li>
-										<li><a class="dropdown-item" href="./pages/shop-wishlist.html">Shop Wishlist</a>
-										</li>
-										<li><a class="dropdown-item" href="./pages/shop-cart.html">Shop Cart</a></li>
-										<li><a class="dropdown-item" href="./pages/shop-checkout.html">Shop Checkout</a>
-										</li>
-									</ul>
-								</li>
-								<li class="nav-item dropdown w-100 w-lg-auto">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-										aria-expanded="false">Stores</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="./pages/store-list.html">Store List</a></li>
-										<li><a class="dropdown-item" href="./pages/store-grid.html">Store Grid</a></li>
-										<li><a class="dropdown-item" href="./pages/store-single.html">Store Single</a>
-										</li>
-									</ul>
-								</li>
-								<li class="nav-item dropdown w-100 w-lg-auto dropdown-fullwidth">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-										aria-expanded="false">Mega menu</a>
-									<div class="dropdown-menu pb-0">
-										<div class="row p-2 p-lg-4">
-											<div class="col-lg-3 col-12 mb-4 mb-lg-0">
-												<h6 class="text-primary ps-3">Dairy, Bread & Eggs</h6>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Butter</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Milk Drinks</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Curd & Yogurt</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Eggs</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Buns & Bakery</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Cheese</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Condensed
-													Milk</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Dairy
-													Products</a>
-											</div>
-											<div class="col-lg-3 col-12 mb-4 mb-lg-0">
-												<h6 class="text-primary ps-3">Breakfast & Instant Food</h6>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Breakfast
-													Cereal</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Noodles, Pasta &
-													Soup</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Frozen Veg
-													Snacks</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Frozen Non-Veg
-													Snacks</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Vermicelli</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Instant Mixes</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Batter</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Fruit and
-													Juices</a>
-											</div>
-											<div class="col-lg-3 col-12 mb-4 mb-lg-0">
-												<h6 class="text-primary ps-3">Cold Drinks & Juices</h6>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Soft Drinks</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Fruit Juices</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Coldpress</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Water & Ice
-													Cubes</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Soda & Mixers</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Health Drinks</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Herbal Drinks</a>
-												<a class="dropdown-item" href="./pages/shop-grid.html">Milk Drinks</a>
-											</div>
-											<div class="col-lg-3 col-12 mb-4 mb-lg-0">
-												<div class="card border-0">
-													<img src="./assets/images/banner/menu-banner.jpg"
-														alt="eCommerce HTML Template" class="img-fluid" />
-													<div class="position-absolute ps-6 mt-8">
-														<h5 class="mb-0">
-															Dont miss this
-															<br />
-															offer today.
-														</h5>
-														<a href="#" class="btn btn-primary btn-sm mt-3">Shop Now</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="nav-item dropdown w-100 w-lg-auto">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-										aria-expanded="false">Pages</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="./pages/blog.html">Blog</a></li>
-										<li><a class="dropdown-item" href="./pages/blog-single.html">Blog Single</a>
-										</li>
-										<li><a class="dropdown-item" href="./pages/blog-category.html">Blog Category</a>
-										</li>
-										<li><a class="dropdown-item" href="./pages/about.html">About us</a></li>
-										<li><a class="dropdown-item" href="./pages/404error.html">404 Error</a></li>
-										<li><a class="dropdown-item" href="./pages/contact.html">Contact</a></li>
-									</ul>
-								</li>
-								<li class="nav-item dropdown w-100 w-lg-auto">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-										aria-expanded="false">Account</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="./pages/signin.html">Sign in</a></li>
-										<li><a class="dropdown-item" href="./pages/signup.html">Signup</a></li>
-										<li><a class="dropdown-item" href="./pages/forgot-password.html">Forgot
-												Password</a></li>
-										<li class="dropdown-submenu dropend">
-											<a class="dropdown-item dropdown-list-group-item dropdown-toggle"
-												href="#">My Account</a>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item"
-														href="./pages/account-orders.html">Orders</a></li>
-												<li><a class="dropdown-item"
-														href="./pages/account-settings.html">Settings</a></li>
-												<li><a class="dropdown-item"
-														href="./pages/account-address.html">Address</a></li>
-												<li><a class="dropdown-item"
-														href="./pages/account-payment-method.html">Payment Method</a>
-												</li>
-												<li><a class="dropdown-item"
-														href="./pages/account-notification.html">Notification</a>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li class="nav-item w-100 w-lg-auto">
-									<a class="nav-link" href="./dashboard/index.html">Dashboard</a>
-								</li>
-								<li class="nav-item dropdown w-100 w-lg-auto dropdown-flyout">
-									<a class="nav-link" href="#" id="navbarDropdownDocs" role="button"
-										data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
-									<div class="dropdown-menu dropdown-menu-lg" aria-labelledby="navbarDropdownDocs">
-										<a class="dropdown-item align-items-start" href="./docs/index.html">
-											<div>
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-													fill="currentColor" class="bi bi-file-text text-primary"
-													viewBox="0 0 16 16">
-													<path
-														d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" />
-													<path
-														d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
-												</svg>
-											</div>
-											<div class="ms-3 lh-1">
-												<h6 class="mb-1">Documentations</h6>
-												<p class="mb-0 small">Browse the all documentation</p>
-											</div>
-										</a>
-										<a class="dropdown-item align-items-start" href="./docs/changelog.html">
-											<div>
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-													fill="currentColor" class="bi bi-layers text-primary"
-													viewBox="0 0 16 16">
-													<path
-														d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0l3.515-1.874zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z" />
-												</svg>
-											</div>
-											<div class="ms-3 lh-1">
-												<h6 class="mb-1">
-													Changelog
-													<span class="text-primary ms-1">v1.4.0</span>
-												</h6>
-												<p class="mb-0 small">See what's new</p>
-											</div>
-										</a>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
+	
 	</div>
 	<!-- Modal -->
 	<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content p-4">
 				<div class="modal-header border-0">
-					<h5 class="modal-title fs-3 fw-bold" id="userModalLabel">Sign Up</h5>
+					<h5 class="modal-title fs-3 fw-bold" id="userModalLabel">회원가입</h5>
 
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<form class="needs-validation" novalidate>
 						<div class="mb-3">
-							<label for="fullName" class="form-label">Name</label>
-							<input type="text" class="form-control" id="fullName" placeholder="Enter Your Name"
+							<label for="fullName" class="form-label">이름</label>
+							<input type="text" class="form-control" id="fullName" placeholder="이름"
 								required />
-							<div class="invalid-feedback">Please enter name.</div>
+							<div class="invalid-feedback">이름을 입력해주세요.</div>
 						</div>
 						<div class="mb-3">
-							<label for="email" class="form-label">Email address</label>
-							<input type="email" class="form-control" id="email" placeholder="Enter Email address"
+							<label for="email" class="form-label">생년월일</label>
+							<input type="email" class="form-control" id="email" placeholder="ex) 20020622"
 								required />
-							<div class="invalid-feedback">Please enter email.</div>
+							<div class="invalid-feedback">생일을 입력해주세요.</div>
 						</div>
 						<div class="mb-3">
-							<label for="password" class="form-label">Password</label>
-							<input type="password" class="form-control" id="password" placeholder="Enter Password"
+							<label for="email" class="form-label">아이디</label>
+							<input type="email" class="form-control" id="email" placeholder="아이디"
 								required />
-							<div class="invalid-feedback">Please enter password.</div>
+							<div class="invalid-feedback">아이디를 입력해주세요.</div>
+						</div>
+						<div class="mb-3">
+							<label for="password" class="form-label">비밀번호</label>
+							<input type="password" class="form-control" id="password" placeholder="비밀번호"
+								required />
+							<div class="invalid-feedback">비밀번호를 입력해주세요</div>
 							<small class="form-text">
-								By Signup, you agree to our
-								<a href="#!">Terms of Service</a>
-								&
-								<a href="#!">Privacy Policy</a>
+								회원가입을 통해 귀하는
+								<a href="#!">이용 약관</a>
+								및
+								<a href="#!">개인정보 처리방침</a>
+								에 동의합니다.
 							</small>
 						</div>
 
-						<button type="submit" class="btn btn-primary" type="submit">Sign Up</button>
+						<button type="submit" class="btn btn-primary" type="submit">회원가입</button>
 					</form>
 				</div>
 				<div class="modal-footer border-0 justify-content-center">
-					Already have an account?
-					<a href="#">Sign in</a>
+					이미 계정이 있으신가요?
+					<a href="#">로그인하기</a>
 				</div>
 			</div>
 		</div>
@@ -973,7 +717,7 @@
 
 	<script src="./assets/js/vendors/validation.js"></script>
 	<main>
-		<section class="mt-8">
+		<!-- <section class="mt-8">
 			<div class="container">
 				<div class="hero-slider">
 					<div
@@ -1010,147 +754,423 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<!-- Category Section Start-->
-		<section class="mb-lg-10 mt-lg-14 my-8">
+		<section class="mb-lg-5 mt-lg- my-5">
 			<div class="container">
 				<div class="row">
 					<div class="col-12 mb-6">
-						<h3 class="mb-0">Featured Categories</h3>
+							<h3 class="mb-0">동네 인기 디자이너</h3>
 					</div>
 				</div>
 				<div class="category-slider">
-					<div class="item">
+					  <div class="item">
 						<a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
-							<div class="card card-product mb-lg-4">
-								<div class="card-body text-center py-8">
-									<img src="assets/images/category/category-dairy-bread-eggs.jpg"
-										alt="Grocery Ecommerce Template" class="mb-3 img-fluid" />
-									<div class="text-truncate">Dairy, Bread & Eggs</div>
-								</div>
+						  <div class="card card-product mb-lg-4" style="border-top-left-radius: 12px; border-top-right-radius: 12px;">
+							<div class="card-body text-center py-0 px-0" style="overflow: hidden;">
+							  <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20241215_184%2F1734231720251bRxuU_JPEG%2F%25C1%25F6%25BC%25F6%25BF%25AC2.jpg" 
+								   alt="Grocery Ecommerce Template" 
+								   class="mb-3 img-fluid" 
+								   style="height: 200px; width: 100%; object-fit: cover; object-position: top; border-top-left-radius: 12px; border-top-right-radius: 12px;" />
+							  <div class="text-truncate">수연 / <strong>COMMUNE</strong></div>
 							</div>
+						  </div>
 						</a>
-					</div>
-					<div class="item">
+					  </div>
+					  
+					  <div class="item">
 						<a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
-							<div class="card card-product mb-lg-4">
-								<div class="card-body text-center py-8">
-									<img src="assets/images/category/category-snack-munchies.jpg"
-										alt="Grocery Ecommerce Template" class="mb-3" />
-									<div class="text-truncate">Snack & Munchies</div>
-								</div>
+						  <div class="card card-product mb-lg-4" style="border-top-left-radius: 12px; border-top-right-radius: 12px;">
+							<div class="card-body text-center py-0 px-0" style="overflow: hidden;">
+							  <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20241222_239%2F1734794524174ehHoW_JPEG%2FAA8BF1C1-8578-4FD5-A48C-779FE9241192.JPG" 
+								   alt="Grocery Ecommerce Template" 
+								   class="mb-3 img-fluid" 
+								   style="height: 200px; width: 100%; object-fit: cover; object-position: top; border-top-left-radius: 12px; border-top-right-radius: 12px;" />
+							   <div class="text-truncate">순재 / <strong>GEEK HAIR</strong></div>
 							</div>
+						  </div>
 						</a>
-					</div>
-					<div class="item">
+					  </div>
+					  
+					  <div class="item">
 						<a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
-							<div class="card card-product mb-lg-4">
-								<div class="card-body text-center py-8">
-									<img src="assets/images/category/category-bakery-biscuits.jpg"
-										alt="Grocery Ecommerce Template" class="mb-3" />
-									<div class="text-truncate">Bakery & Biscuits</div>
-								</div>
+						  <div class="card card-product mb-lg-4" style="border-top-left-radius: 12px; border-top-right-radius: 12px;">
+							<div class="card-body text-center py-0 px-0" style="overflow: hidden;">
+							  <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20250103_140%2F1735892800359HDGlB_JPEG%2F6FBB75A2-46E4-4ADC-BFAC-5FBDB6C3AA6E.jpeg" 
+								   alt="Grocery Ecommerce Template" 
+								   class="mb-3 img-fluid" 
+								   style="height: 200px; width: 100%; object-fit: cover; object-position: top; border-top-left-radius: 12px; border-top-right-radius: 12px;" />
+								<div class="text-truncate">유서하 / <strong>HAIR THE VEIW</strong></div>
 							</div>
+						  </div>
 						</a>
-					</div>
-					<div class="item">
+					  </div>
+					  
+					  <div class="item">
 						<a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
-							<div class="card card-product mb-lg-4">
-								<div class="card-body text-center py-8">
-									<img src="assets/images/category/category-instant-food.jpg"
-										alt="Grocery Ecommerce Template" class="mb-3" />
-									<div class="text-truncate">Instant Food</div>
-								</div>
+						  <div class="card card-product mb-lg-4" style="border-top-left-radius: 12px; border-top-right-radius: 12px;">
+							<div class="card-body text-center py-0 px-0" style="overflow: hidden;">
+							  <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20240725_223%2F1721864285189Vx38B_JPEG%2F2023118_haum17389_%25282%2529.jpg" 
+								   alt="Grocery Ecommerce Template" 
+								   class="mb-3 img-fluid" 
+								   style="height: 200px; width: 100%; object-fit: cover; object-position: top; border-top-left-radius: 12px; border-top-right-radius: 12px;" />
+								<div class="text-truncate">하능 / <strong>HAUM</strong></div>
 							</div>
+						  </div>
 						</a>
-					</div>
-					<div class="item">
+					  </div>
+					  <div class="item">
 						<a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
-							<div class="card card-product mb-lg-4">
-								<div class="card-body text-center py-8">
-									<img src="assets/images/category/category-tea-coffee-drinks.jpg"
-										alt="Grocery Ecommerce Template" class="mb-3" />
-									<div class="text-truncate">Tea, Coffee & Drinks</div>
-								</div>
+						  <div class="card card-product mb-lg-4" style="border-top-left-radius: 12px; border-top-right-radius: 12px;">
+							<div class="card-body text-center py-0 px-0" style="overflow: hidden;">
+							  <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20241225_264%2F1735095375644L4m7f_JPEG%2FKakaoTalk_20241225_115501218.jpg" 
+								   alt="Grocery Ecommerce Template" 
+								   class="mb-3 img-fluid" 
+								   style="height: 200px; width: 100%; object-fit: cover; object-position: top; border-top-left-radius: 12px; border-top-right-radius: 12px;" />
+								<div class="text-truncate">문지윤 / <strong>JUNO HAIR</strong></div>
 							</div>
+						  </div>
 						</a>
-					</div>
-					<div class="item">
+					  </div>
+					  <div class="item">
 						<a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
-							<div class="card card-product mb-lg-4">
-								<div class="card-body text-center py-8">
-									<img src="assets/images/category/category-atta-rice-dal.jpg"
-										alt="Grocery Ecommerce Template" class="mb-3" />
-									<div class="text-truncate">Atta, Rice & Dal</div>
-								</div>
+						  <div class="card card-product mb-lg-4" style="border-top-left-radius: 12px; border-top-right-radius: 12px;">
+							<div class="card-body text-center py-0 px-0" style="overflow: hidden;">
+							  <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20240719_203%2F1721361006062UNiuj_JPEG%2F%25C1%25F8%25C7%25FC.jpg" 
+								   alt="Grocery Ecommerce Template" 
+								   class="mb-3 img-fluid" 
+								   style="height: 200px; width: 100%; object-fit: cover; object-position: top; border-top-left-radius: 12px; border-top-right-radius: 12px;" />
+								<div class="text-truncate">진영 / <strong>NORMAL SHOP</strong></div>
 							</div>
+						  </div>
 						</a>
-					</div>
-
-					<div class="item">
-						<a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
-							<div class="card card-product mb-lg-4">
-								<div class="card-body text-center py-8">
-									<img src="assets/images/category/category-baby-care.jpg"
-										alt="Grocery Ecommerce Template" class="mb-3" />
-									<div class="text-truncate">Baby Care</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="item">
-						<a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
-							<div class="card card-product mb-lg-4">
-								<div class="card-body text-center py-8">
-									<img src="assets/images/category/category-chicken-meat-fish.jpg"
-										alt="Grocery Ecommerce Template" class="mb-3" />
-									<div class="text-truncate">Chicken, Meat & Fish</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="item">
-						<a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
-							<div class="card card-product mb-lg-4">
-								<div class="card-body text-center py-8">
-									<img src="assets/images/category/category-cleaning-essentials.jpg"
-										alt="Grocery Ecommerce Template" class="mb-3" />
-									<div class="text-truncate">Cleaning Essentials</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="item">
-						<a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
-							<div class="card card-product mb-lg-4">
-								<div class="card-body text-center py-8">
-									<img src="assets/images/category/category-pet-care.jpg"
-										alt="Grocery Ecommerce Template" class="mb-3" />
-									<div class="text-truncate">Pet Care</div>
-								</div>
-							</div>
-						</a>
-					</div>
+					  </div>
+					
 				</div>
 			</div>
 		</section>
 		<!-- Category Section End-->
+		<nav class="navbar navbar-expand-lg navbar-light navbar-default py-0 pb-lg-4"
+		aria-label="Offcanvas navbar large">
+		<div class="container">
+			<div class="offcanvas offcanvas-start" tabindex="-1" id="navbar-default"
+				aria-labelledby="navbar-defaultLabel">
+				<div class="offcanvas-header pb-1">
+					<a href="./index.html"><img src="./assets/images/logo/freshcart-logo.svg"
+							alt="eCommerce HTML Template" /></a>
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<div class="d-block d-lg-none mb-4">
+						<form action="#">
+							<div class="input-group">
+								<input class="form-control rounded" type="search"
+									placeholder="원하는 스타일 검색하기" />
+								<span class="input-group-append">
+									<button class="btn bg-white border border-start-0 ms-n10 rounded-0 rounded-end"
+										type="button">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+											stroke-linecap="round" stroke-linejoin="round"
+											class="feather feather-search">
+											<circle cx="11" cy="11" r="8"></circle>
+											<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+										</svg>
+									</button>
+								</span>
+							</div>
+						</form>
+						<div class="mt-2">
+							<button type="button" class="btn btn-outline-gray-400 text-muted w-100"
+								data-bs-toggle="modal" data-bs-target="#locationModal">
+								<i class="feather-icon icon-map-pin me-2"></i>
+								Pick Location
+							</button>
+						</div>
+					</div>
+					<div class="d-block d-lg-none mb-4">
+						<a class="btn btn-primary w-100 d-flex justify-content-center align-items-center"
+							data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+							aria-controls="collapseExample">
+							<span class="me-2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+									fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+									stroke-linejoin="round" class="feather feather-grid">
+									<rect x="3" y="3" width="7" height="7"></rect>
+									<rect x="14" y="3" width="7" height="7"></rect>
+									<rect x="14" y="14" width="7" height="7"></rect>
+									<rect x="3" y="14" width="7" height="7"></rect>
+								</svg>
+							</span>
+							카테고리
+						</a>
+						<div class="collapse mt-2" id="collapseExample">
+							<div class="card card-body">
+								<ul class="mb-0 list-unstyled">
+									<li><a class="dropdown-item" href="./pages/shop-grid.html">Dairy, Bread &
+											Eggs</a></li>
+									<li><a class="dropdown-item" href="./pages/shop-grid.html">Snacks & Munchies</a>
+									</li>
+									<li><a class="dropdown-item" href="./pages/shop-grid.html">Fruits &
+											Vegetables</a></li>
+									<li><a class="dropdown-item" href="./pages/shop-grid.html">Cold Drinks &
+											Juices</a></li>
+									<li><a class="dropdown-item" href="./pages/shop-grid.html">Breakfast & Instant
+											Food</a></li>
+									<li><a class="dropdown-item" href="./pages/shop-grid.html">Bakery & Biscuits</a>
+									</li>
+									<li><a class="dropdown-item" href="./pages/shop-grid.html">Chicken, Meat &
+											Fish</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="dropdown me-3 d-none d-lg-block">
+						<button class="btn btn-dark px-6" type="button" id="dropdownMenuButton1"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							<span class="me-1">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+									fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+									stroke-linejoin="round" class="feather feather-grid">
+									<rect x="3" y="3" width="7" height="7"></rect>
+									<rect x="14" y="3" width="7" height="7"></rect>
+									<rect x="14" y="14" width="7" height="7"></rect>
+									<rect x="3" y="14" width="7" height="7"></rect>
+								</svg>
+							</span>
+							카테고리
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+							<li><a class="dropdown-item" href="./pages/shop-grid.html">Dairy, Bread & Eggs</a></li>
+							<li><a class="dropdown-item" href="./pages/shop-grid.html">Snacks & Munchies</a></li>
+							<li><a class="dropdown-item" href="./pages/shop-grid.html">Fruits & Vegetables</a></li>
+							<li><a class="dropdown-item" href="./pages/shop-grid.html">Cold Drinks & Juices</a></li>
+							<li><a class="dropdown-item" href="./pages/shop-grid.html">Breakfast & Instant Food</a>
+							</li>
+							<li><a class="dropdown-item" href="./pages/shop-grid.html">Bakery & Biscuits</a></li>
+							<li><a class="dropdown-item" href="./pages/shop-grid.html">Chicken, Meat & Fish</a></li>
+						</ul>
+					</div>
+					<div>
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item dropdown w-100 w-lg-auto">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">브랜드</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="./index.html">Home 1</a></li>
+									<li><a class="dropdown-item" href="./pages/index-2.html">Home 2</a></li>
+									<li><a class="dropdown-item" href="./pages/index-3.html">Home 3</a></li>
+									<li><a class="dropdown-item" href="./pages/index-4.html">Home 4</a></li>
+									<li>
+										<a class="dropdown-item" href="./pages/index-5.html">Home 5</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown w-100 w-lg-auto">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">세일</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="./pages/shop-grid.html">Shop Grid -
+											Filter</a></li>
+									<li><a class="dropdown-item" href="./pages/shop-grid-3-column.html">Shop Grid -
+											3 column</a>
+									</li>
+									<li><a class="dropdown-item" href="./pages/shop-list.html">Shop List -
+											Filter</a></li>
+									<li><a class="dropdown-item" href="./pages/shop-filter.html">Shop - Filter</a>
+									</li>
+									<li><a class="dropdown-item" href="./pages/shop-fullwidth.html">Shop Wide</a>
+									</li>
+									<li><a class="dropdown-item" href="./pages/shop-single.html">Shop Single</a>
+									</li>
+									<li><a class="dropdown-item" href="./pages/shop-single-2.html">Shop Single
+											v2</a></li>
+									<li><a class="dropdown-item" href="./pages/shop-wishlist.html">Shop Wishlist</a>
+									</li>
+									<li><a class="dropdown-item" href="./pages/shop-cart.html">Shop Cart</a></li>
+									<li><a class="dropdown-item" href="./pages/shop-checkout.html">Shop Checkout</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown w-100 w-lg-auto">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">매거진</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="./pages/store-list.html">Store List</a></li>
+									<li><a class="dropdown-item" href="./pages/store-grid.html">Store Grid</a></li>
+									<li><a class="dropdown-item" href="./pages/store-single.html">Store Single</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown w-100 w-lg-auto dropdown-fullwidth">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">헤어 페스티벌</a>
+								<div class="dropdown-menu pb-0">
+									<div class="row p-2 p-lg-4">
+										<div class="col-lg-3 col-12 mb-4 mb-lg-0">
+											<h6 class="text-primary ps-3">Dairy, Bread & Eggs</h6>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Butter</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Milk Drinks</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Curd & Yogurt</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Eggs</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Buns & Bakery</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Cheese</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Condensed
+												Milk</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Dairy
+												Products</a>
+										</div>
+										<div class="col-lg-3 col-12 mb-4 mb-lg-0">
+											<h6 class="text-primary ps-3">Breakfast & Instant Food</h6>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Breakfast
+												Cereal</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Noodles, Pasta &
+												Soup</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Frozen Veg
+												Snacks</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Frozen Non-Veg
+												Snacks</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Vermicelli</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Instant Mixes</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Batter</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Fruit and
+												Juices</a>
+										</div>
+										<div class="col-lg-3 col-12 mb-4 mb-lg-0">
+											<h6 class="text-primary ps-3">Cold Drinks & Juices</h6>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Soft Drinks</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Fruit Juices</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Coldpress</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Water & Ice
+												Cubes</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Soda & Mixers</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Health Drinks</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Herbal Drinks</a>
+											<a class="dropdown-item" href="./pages/shop-grid.html">Milk Drinks</a>
+										</div>
+										<div class="col-lg-3 col-12 mb-4 mb-lg-0">
+											<div class="card border-0">
+												<img src="./assets/images/banner/menu-banner.jpg"
+													alt="eCommerce HTML Template" class="img-fluid" />
+												<div class="position-absolute ps-6 mt-8">
+													<h5 class="mb-0">
+														Dont miss this
+														<br />
+														offer today.
+													</h5>
+													<a href="#" class="btn btn-primary btn-sm mt-3">Shop Now</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown w-100 w-lg-auto">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">Pages</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="./pages/blog.html">Blog</a></li>
+									<li><a class="dropdown-item" href="./pages/blog-single.html">Blog Single</a>
+									</li>
+									<li><a class="dropdown-item" href="./pages/blog-category.html">Blog Category</a>
+									</li>
+									<li><a class="dropdown-item" href="./pages/about.html">About us</a></li>
+									<li><a class="dropdown-item" href="./pages/404error.html">404 Error</a></li>
+									<li><a class="dropdown-item" href="./pages/contact.html">Contact</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown w-100 w-lg-auto">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">Account</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="./pages/signin.html">Sign in</a></li>
+									<li><a class="dropdown-item" href="./pages/signup.html">Signup</a></li>
+									<li><a class="dropdown-item" href="./pages/forgot-password.html">Forgot
+											Password</a></li>
+									<li class="dropdown-submenu dropend">
+										<a class="dropdown-item dropdown-list-group-item dropdown-toggle"
+											href="#">My Account</a>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item"
+													href="./pages/account-orders.html">Orders</a></li>
+											<li><a class="dropdown-item"
+													href="./pages/account-settings.html">Settings</a></li>
+											<li><a class="dropdown-item"
+													href="./pages/account-address.html">Address</a></li>
+											<li><a class="dropdown-item"
+													href="./pages/account-payment-method.html">Payment Method</a>
+											</li>
+											<li><a class="dropdown-item"
+													href="./pages/account-notification.html">Notification</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item w-100 w-lg-auto">
+								<a class="nav-link" href="./dashboard/index.html">Dashboard</a>
+							</li>
+							<li class="nav-item dropdown w-100 w-lg-auto dropdown-flyout">
+								<a class="nav-link" href="#" id="navbarDropdownDocs" role="button"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+								<div class="dropdown-menu dropdown-menu-lg" aria-labelledby="navbarDropdownDocs">
+									<a class="dropdown-item align-items-start" href="./docs/index.html">
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+												fill="currentColor" class="bi bi-file-text text-primary"
+												viewBox="0 0 16 16">
+												<path
+													d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" />
+												<path
+													d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+											</svg>
+										</div>
+										<div class="ms-3 lh-1">
+											<h6 class="mb-1">Documentations</h6>
+											<p class="mb-0 small">Browse the all documentation</p>
+										</div>
+									</a>
+									<a class="dropdown-item align-items-start" href="./docs/changelog.html">
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+												fill="currentColor" class="bi bi-layers text-primary"
+												viewBox="0 0 16 16">
+												<path
+													d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0l3.515-1.874zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z" />
+											</svg>
+										</div>
+										<div class="ms-3 lh-1">
+											<h6 class="mb-1">
+												Changelog
+												<span class="text-primary ms-1">v1.4.0</span>
+											</h6>
+											<p class="mb-0 small">See what's new</p>
+										</div>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
 		<section>
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-md-6 mb-3 mb-lg-0">
 						<div>
 							<div class="py-10 px-8 rounded"
-								style="background: url(./assets/images/banner/grocery-banner.png) no-repeat; background-size: cover; background-position: center">
+								style="background: url(./assets/images/banner/real_spring.webp) no-repeat; background-size: cover; background-position: center">
 								<div>
-									<h3 class="fw-bold mb-1">Fruits & Vegetables</h3>
-									<p class="mb-4">
-										Get Upto
+									<h3 class="fw-bold mb-1">봄 맞이 할인 쿠폰</h3>
+									<p class="mb-4 text-dark">
+										헤어 시술시 할인 (커트 제외)
 										<span class="fw-bold">30%</span>
 										Off
 									</p>
-									<a href="#!" class="btn btn-dark">Shop Now</a>
+									<a href="#!" class="btn btn-outline-dark">쿠폰받기</a>
 								</div>
 							</div>
 						</div>
@@ -1158,15 +1178,15 @@
 					<div class="col-12 col-md-6">
 						<div>
 							<div class="py-10 px-8 rounded"
-								style="background: url(./assets/images/banner/grocery-banner-2.jpg) no-repeat; background-size: cover; background-position: center">
+								style="background: url(./assets/images/banner/real_kiu.jpg) no-repeat; background-size: cover; background-position: 50% 20%;">
 								<div>
-									<h3 class="fw-bold mb-1">Freshly Baked Buns</h3>
-									<p class="mb-4">
-										Get Upto
-										<span class="fw-bold">25%</span>
+									<h3 class="fw-bold mb-1">이달의 디자이너 응모하기</h3>
+									<p class="mb-4 text-dark">
+										할인 쿠폰 받기
+										<span class="fw-bold">90%</span>
 										Off
 									</p>
-									<a href="#!" class="btn btn-dark">Shop Now</a>
+									<a href="#!" class="btn btn-outline-dark">신청하기</a>
 								</div>
 							</div>
 						</div>
@@ -1183,6 +1203,7 @@
 					</div>
 				</div>
 
+		
 				<div class="row g-4 row-cols-lg-5 row-cols-2 row-cols-md-3">
 					<div class="col">
 						<div class="card card-product">
@@ -1191,9 +1212,9 @@
 									<div class="position-absolute top-0 start-0">
 										<span class="badge bg-danger">Sale</span>
 									</div>
-									<a href="#!"><img src="assets/images/products/product-img-1.jpg"
-											alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
-
+									<a href="#!"><img src="https://i.pinimg.com/474x/66/1e/12/661e12ab4918fca4f56b9e3edc3e6c23.jpg"
+										alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+				
 									<div class="card-product-action">
 										<a href="#!" class="btn-action" data-bs-toggle="modal"
 											data-bs-target="#quickViewModal">
@@ -1207,8 +1228,7 @@
 									</div>
 								</div>
 								<div class="text-small mb-1">
-									<a href="#!" class="text-decoration-none text-muted"><small>Snack &
-											Munchies</small></a>
+									<a href="#!" class="text-decoration-none text-muted"><small>Snack & Munchies</small></a>
 								</div>
 								<h2 class="fs-6"><a href="./pages/shop-single.html"
 										class="text-inherit text-decoration-none">Haldiram's Sev Bhujia</a></h2>
@@ -1243,6 +1263,7 @@
 							</div>
 						</div>
 					</div>
+			
 					<div class="col">
 						<div class="card card-product">
 							<div class="card-body">
@@ -1251,7 +1272,7 @@
 										<span class="badge bg-success">14%</span>
 									</div>
 									<a href="./pages/shop-single.html"><img
-											src="assets/images/products/product-img-2.jpg"
+											src="https://i.pinimg.com/736x/ae/f3/5c/aef35cdcf000b1f22cc28ab670743828.jpg"
 											alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
 									<div class="card-product-action">
 										<a href="#!" class="btn-action" data-bs-toggle="modal"
